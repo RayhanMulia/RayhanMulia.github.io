@@ -1,14 +1,117 @@
-<html>
-    <head>
+<!DOCTYPE html>
 <html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rayhan Mulia Pratama</title>
+    <title>Profil Rayhan Mulia Pratama</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('back ikan.gif'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat;
+            position: relative; 
+        }
+
+        .circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-image: url('Foto Remul.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-bottom: 30px;
+        }
+
+        .rectangle {
+            width: 450px;
+            height: auto;
+            padding: 10px;
+            color: #ffffff;
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 10px;
+            line-height: 1.5;
+            margin-bottom: 40px;
+            border-radius: 48px;
+            background-color: rgb(53, 191, 120);
+        }
+
+        .circle-row {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .small-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .time-card {
+            width: 300px;
+            padding: 15px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: #ffffff; 
+            border-radius: 128px;
+            background-color: rgb(53, 191, 120);
+        }
+    </style>
 </head>
 <body>
+    <div class="circle"></div>
+    <div class="rectangle" id="rectangleCard">
+        <h1>Rayhan Mulia Pratama</h1>
+        <h1>1202223240</h1>
+        <h1>S1 Sistem Informasi</h1>
+    </div>
+    <div class="circle-row">
+        <a href="https://www.instagram.com/oaca._/" target="_blank">
+            <div class="small-circle" style="background-image: url('foto instagram.png');"></div>
+        </a>
+        <a href="https://www.linkedin.com/in/rayhanmulia/" target="_blank">
+            <div class="small-circle" style="background-image: url('foto linkedin.jpg');"></div>
+        </a>
+        <a href="https://github.com/RayhanMulia" target="_blank">
+            <div class="small-circle" style="background-image: url('logo git.jpg');"></div>
+        </a>
+    </div>
 
-    <h1>Rayhan Mulia Pratama</h1>
-    <p>1202223240</p>
-    <p>S1 Sistem Informasi</p>
+    <div class="time-card" id="timeCard">
+        <p id="currentDateTime"></p>
+    </div>
+
+    <script>
+        function updateDateTime() {
+            var now = new Date();
+            var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            var dateString = now.toLocaleDateString('id-ID', options); 
+            var timeString = now.toLocaleTimeString();
+            document.getElementById('currentDateTime').innerHTML = dateString + ' ' + timeString;
+        }
+
+        setInterval(updateDateTime, 1000); 
+        updateDateTime();
+    </script>
 </body>
 </html>
